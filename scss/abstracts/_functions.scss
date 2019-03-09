@@ -1,0 +1,11 @@
+// Color function
+
+@function grey($shade) {
+$value: map-get($greys, $shade);
+@return $value;
+};
+
+@function violet($shade) {
+$value: map-get($violets, $shade);
+@return $value;
+};

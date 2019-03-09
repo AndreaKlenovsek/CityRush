@@ -1,0 +1,26 @@
+// Media query
+
+$breakepoints: (
+small: 450px,
+medium: 880px,
+large: 1200px,
+xl: 1600px,
+
+);
+
+
+@mixin mq() {
+@if (map-has-key($breakpoints, $size)) {
+$brakepoint: map-get($breakepoint, $size);
+@media(max-width: $breakepoint) {
+@content; 
+}
+} @else if (type-of($size) == number and not unitless($size)) {
+@media(max-width: $size) {
+@content;    
+}
+}  
+@else {
+@error "Map doesnt have #{$breakepoint} you have entered or is unitless";
+} 
+};
