@@ -1,0 +1,100 @@
+.hero {
+position: relative;
+display: grid;
+
+@include mq(medium) {
+grid-template-columns: 1fr 2fr;
+padding-top: 2em;
+
+
+}
+
+
+
+
+
+
+
+&__text {
+padding: 4em 0;
+background: violet(light);
+@include mq(medium){
+margin: 4em .5em;
+padding: 0;
+background: transparent;
+
+}
+@include mq(large) {
+margin: 8em 5em;
+text-align: left;
+}
+}
+
+&__title {
+@include mq(large) {
+font-size: 5em;
+}
+}
+
+&__subtitle {
+font-family: $ff-montserrat;
+
+@include mq(large) {
+font-size: 1.5em;
+display: block;
+
+
+}
+}
+
+
+&__btn-bg {
+padding: .1em;
+display: inline-block;
+background: linear-gradient(45deg, violet(dark), violet(medium));
+margin-top: 1em;
+
+
+&:hover .hero__btn {
+
+@include mq(medium){
+background: transparent;
+color: $clr-white;
+}
+}
+}
+
+&__btn {
+padding: .5em 2.3em;
+background: transparent;
+color: $clr-white;
+display: inline-block;
+text-decoration: none;
+text-transform: uppercase;
+font-family: $ff-montserrat;
+transition: all ease-in-out 350ms;
+@include mq(medium){
+background: $clr-white;
+color: violet(dark);
+    }
+
+@include mq(large) {
+font-size: 1.2em;
+
+    
+    }
+
+}
+}
+
+.hero__img {
+display: none;
+@include mq(medium) {
+display: flex;
+justify-content: flex-end;
+}
+}
+
+.hero-img {
+max-width: 900px;
+}

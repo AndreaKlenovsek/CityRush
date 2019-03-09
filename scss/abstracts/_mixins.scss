@@ -1,18 +1,18 @@
 // Media query
 
 $breakepoints: (
-small: 450px,
-medium: 880px,
+small: 350px,
+medium: 782px,
 large: 1200px,
 xl: 1600px,
 
 );
 
 
-@mixin mq() {
-@if (map-has-key($breakpoints, $size)) {
-$brakepoint: map-get($breakepoint, $size);
-@media(max-width: $breakepoint) {
+@mixin mq($size) {
+@if (map-has-key($breakepoints, $size)) {
+$brakepoint: map-get($breakepoints, $size);
+@media(min-width: $brakepoint) {
 @content; 
 }
 } @else if (type-of($size) == number and not unitless($size)) {
@@ -21,6 +21,40 @@ $brakepoint: map-get($breakepoint, $size);
 }
 }  
 @else {
-@error "Map doesnt have #{$breakepoint} you have entered or is unitless";
+@error "Map doesnt have #{$brakepoint} you have entered or is unitless";
 } 
 };
+
+
+// Container
+
+@mixin container($width: 90%){
+max-width: $width;
+margin: 0 auto;
+};
+
+// Grid
+$spacer: 2em;
+
+@mixin grid($col: 3) {
+display: grid;
+grid: auto-flow / repeat($col, 1fr);
+grid-column-gap: $spacer;
+}
+
+// Pseudo
+// Rush mixin
+
+@mixin rush() {
+&::before{
+content: '';
+height: 30px;
+width: 30px;
+border-radius: 50%;
+background: violet(light);
+position: absolute;
+top: -0.5em;
+left: -1em;
+z-index: -1;
+}
+}

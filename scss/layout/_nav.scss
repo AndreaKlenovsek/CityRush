@@ -1,0 +1,55 @@
+nav {
+position: absolute;
+right: 0;
+top: 0;
+z-index: 1;
+@include mq(medium) {
+
+right: 0;
+top: 2em;
+
+}
+
+ul {
+margin: 0;
+padding: 0;
+list-style: none;
+display: flex;
+justify-content: flex-end;
+
+}
+
+li {
+
+}
+
+a {
+text-decoration: none;
+font-weight: $fw-medium;
+padding: .7em;
+position: relative;
+font-family: $ff-montserrat;
+color: grey(dark);
+@include mq(medium) {
+padding: 1.5em;
+}
+
+@include mq(large) {
+font-size: 1.2rem;
+}
+
+
+}
+}
+
+.logo {
+position: absolute;
+top: 0;
+left: 0;
+width: 70px;
+z-index: 1;
+@include mq(large) {
+width: 100px;
+}
+
+}

@@ -1,0 +1,74 @@
+.intro {
+padding: 4em 0;
+@include mq(large) {
+@include container($width: 75%);
+}
+
+
+&__wrapper {
+
+display: grid;
+@include mq(medium) {
+grid-template-columns: repeat(2, 1fr);
+}
+}
+
+&__banner {
+position: relative;
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+
+& .intro-img {
+display: none;
+@include mq(medium) {
+display: block;
+}
+}
+
+
+& .banner-bg {
+margin-top: 3em auto;
+display: inline-block;
+
+
+
+&:hover .banner-btn {
+background: transparent;
+}
+}
+
+& .banner-btn {
+padding: .2em 1em;
+font-size: 1.2rem;
+}
+}
+
+
+
+&__text {
+@include container($width: 70%);
+
+
+
+& p {
+padding: .5em;
+}
+}
+
+&__title {
+display: inline-block;
+
+&::after {
+content: url(../img/intro.svg);
+display: block;
+width: 100%;
+@include mq(medium) {
+display: none;
+}
+}
+}
+}

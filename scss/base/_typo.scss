@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Acme|Assistant:300,400,700|Crete+Round|Exo+2:300,400,500,700,900|Montserrat:300,400,500i,700i,900|Thasadith');
+
+h1, h2, h3, h4, p, figcaption, figure {
+margin: 0;
+padding: 0;
+}
+
+body {
+text-align: center;
+line-height: 1.5;
+font-family: $ff-assistant;
+
+
+}
+
+h1 {
+font-size: 3rem;
+font-family: $ff-acme;
+
+}
+
+
+h2 {
+    font-size: 1.8srem;
+    font-family: $ff-montserrat;
+    font-weight: $fw-medium;
+    padding: 2em 0;
+    letter-spacing: 2px;
+    
+    }
+
+h3 {
+position: relative;
+display: inline-block;
+color: violet(dark);
+font-weight: $fw-medium;
+letter-spacing: 1px;
+margin: 1em 0;
+@include rush;
+}

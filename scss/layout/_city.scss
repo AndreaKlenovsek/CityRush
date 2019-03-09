@@ -1,0 +1,38 @@
+.city {
+padding: 4em 0;
+position: relative;
+}
+
+.city-img {
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+}
+
+.cars {
+    display: none;
+    @include mq(large) {
+    display: block;
+    position: absolute;
+    bottom: -0.6em;
+    left: 0;
+    right: 0;
+    animation: drive 30s linear infinite;
+    height: 100px;
+}
+}
+
+
+
+@keyframes drive {
+0% {
+left: 100%;
+}
+100% {
+left: -10%;
+}
+
+
+}
+
