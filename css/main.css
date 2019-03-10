@@ -121,7 +121,10 @@ nav a {
 }
 .hero__text {
   padding: 4em 0;
-  background: #e0a0d3;
+  background: url(../img/bgsmall.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 @media (min-width: 782px) {
   .hero__text {
@@ -143,11 +146,21 @@ nav a {
 }
 .hero__subtitle {
   font-family: "Montserrat", sans-serif;
+  display: none;
+  animation: fade 2s;
 }
 @media (min-width: 1200px) {
   .hero__subtitle {
     font-size: 1.5em;
     display: block;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
   }
 }
 .hero__btn-bg {
@@ -231,7 +244,7 @@ nav a {
   }
 }
 .intro__banner .banner-bg {
-  margin-top: 3em auto;
+  margin-top: 5em;
   display: inline-block;
 }
 .intro__banner .banner-bg:hover .banner-btn {
@@ -262,6 +275,101 @@ nav a {
   }
 }
 
+.gallery {
+  border: 10px solid #e0a0d3;
+  padding: 2em 0;
+  background: #f9eff7;
+  max-width: 90%;
+  margin: 0 auto;
+}
+@media (min-width: 1200px) {
+  .gallery {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
+.gallery__title {
+  color: #9b247d;
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  height: auto;
+  padding: 1em;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  margin-top: -1.5em;
+  font-size: 1rem;
+}
+
+.next {
+  right: 0;
+}
+
+.prev {
+  left: 0;
+}
+
+.prev:hover, .next:hover {
+  background: linear-gradient(45deg, #462f81, #9b247d);
+}
+
+.text {
+  position: absolute;
+  width: 100%;
+  padding: 1em;
+  color: white;
+  bottom: 1em;
+}
+
+.numbertext {
+  position: absolute;
+  top: 0;
+  color: white;
+  padding: 1em;
+  font-size: 0.7rem;
+}
+
+.dot {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #e0a0d3;
+  display: inline-block;
+  margin: 1em 0.5em;
+}
+
+.active, .dot:hover {
+  background: linear-gradient(45deg, #462f81, #9b247d);
+}
+
+.fade {
+  animation: fade 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .rush {
   padding: 2em 0;
 }
@@ -311,7 +419,7 @@ nav a {
     left: 100%;
   }
   100% {
-    left: -10%;
+    left: -100%;
   }
 }
 footer {

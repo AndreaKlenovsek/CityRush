@@ -58,3 +58,14 @@ left: -1em;
 z-index: -1;
 }
 }
+
+
+
+// Background mixin
+
+@mixin bg($bg) {
+background: $bg;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}

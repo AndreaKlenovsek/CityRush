@@ -17,7 +17,7 @@ padding-top: 2em;
 
 &__text {
 padding: 4em 0;
-background: violet(light);
+@include bg($bg: url(../img/bgsmall.svg));
 @include mq(medium){
 margin: 4em .5em;
 padding: 0;
@@ -38,13 +38,21 @@ font-size: 5em;
 
 &__subtitle {
 font-family: $ff-montserrat;
-
+display: none;
+animation: fade 2s;
 @include mq(large) {
 font-size: 1.5em;
 display: block;
 
 
 }
+
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
 }
 
 
